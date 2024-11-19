@@ -1,0 +1,109 @@
+\section{Ações de Grupos}\label{sec:ações-de-grupos}
+
+\begin{definition}
+  Sejam $G$ um grupo e $X$ um conjunto não vazio. Uma ação de $G$ à direita de $X$ é uma função
+  \[
+    X\times{G}\to{X},\quad{(x,u)\mapsto{xu}},
+  \]
+  tal que:
+  \begin{description}
+    \item[$A1$] $\forall\,x\in{X},\,\forall\,g_{1},g_{2}\in{G}$: $(xg_{1})g_{2}=x(g_{1}g_{2})$,
+    \item[$A2$] $\forall\,x\in{X}$: $x1=x$.
+  \end{description}
+  O conjunto $X$ é então dito ser um $G$-conjunto.
+\end{definition}
+
+Seja $X$ um $G$-conjunto. Dados $x,y\in{G}$, escreva $x\sim_{G}{y}$ se existe um elemento $u\in{G}$ tal que $xu=y$.
+
+\begin{proposition}
+  Seja $X$ um $G$-conjunto. Então, $\sim_{G}$ é uma relação de equivalência em $X$.
+\end{proposition}
+
+\begin{proof}
+  É fato que, se $x\in{X}$, então $x1=x$ e, em assim sendo, $x\sim_{G}x$. Dando sequência, se $x\sim_{G}y$, então $xu=y$ para algum $u\in{G}$ e, deste modo, tem-se que:
+  \[
+    yu^{-1}=(xu)u^{-1}=x(uu^{-1})=x1=x,
+  \]
+  de onde segue que, também, $y\sim_{G}x$. Finalmente, se $x\sim_{G}y$ e $y\sim_{G}z$, então $xu=y$ e $yv=z$ para certos $u,v\in{G}$. Portanto, tem-se que:
+  \[
+    x(uv)=(xu)v=yv=z,
+  \]
+  de forma que $x\sim_{G}z$.
+\end{proof}
+
+\begin{definition}
+  Seja $X$ um $G$-conjunto. Para cada elemento $x\in{X}$, dá-se o nome de:
+  \begin{enumerate}[a)]
+    \item $G$-órbita de $x$ ao conjunto $x\cdot{G}=\left\{y\in{X}:y\sim_{G}x\right\}$,
+    \item $G$-estabilizador de $x$ ao conjunto $G_{x}=\left\{u\in{G}:xu=x\right\}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Seja $X$ um $G$-conjunto. Então, a função
+  \[
+    G_{x}/G\to{x\cdot{G}},\quad{G_{x}\cdot{u}\mapsto{xu}},
+  \]
+  é, para cada $x\in{X}$, uma bijeção.
+\end{proposition}
+
+\begin{proof}
+  Fixe um elemento $x\in{X}$ qualquer. Observe que:
+  \[
+    G_{x}\cdot{u}=G_{x}\cdot{v}\iff{vu^{-1}\in{G_{x}}}\iff{x=x(vu^{-1})}\iff{xu=xv},
+  \]
+  para todos $u,v\in{G}$, de onde segue que $G_{x}\cdot{u}\mapsto{xu}$ é uma função injetiva. Quanto à sobrejetiva da mesma, basta notar que se $y\in{x\cdot{G}}$, então $y=xv$ para algum $v\in{G}$ e, deste modo, que $G_{x}\cdot{v}\mapsto{xv}=y$.
+\end{proof}
+
+\begin{corollary}
+  Seja $X$ um $G$-conjunto em que tanto $X$ quanto $G$ são finitos. Então, tem-se que:
+  \[
+    [G:G_{x}]=|x\cdot{G}|,
+  \]
+  para todo $x\in{X}$.
+\end{corollary}
+
+\begin{proposition}
+  Sejam $X$ um $G$-conjunto e $S_{X}$ o grupo das permutações de $X$, este último com respeito à composição de funções. Então, é um homomorfismo de grupos a função:
+  \[
+    G\to{S_{X}},\quad{u\mapsto\widehat{u}},
+  \]
+  em que
+  \[
+    \widehat{u}:X\to{X},\quad{x\mapsto{xu}}.
+  \]
+\end{proposition}
+
+\begin{proof}
+  É claro que $\widehat{u}\in{S_{X}}$, sendo $\widehat{u}^{-1}=\widehat{u^{-1}}$, para cada $u\in{S_{X}}$. Desta forma, resta apenas provar que $u\mapsto{\widehat{u}}$ é um homomorfismo de grupos. Ora, tem-se que:
+  \[
+    (x)\widehat{uv}=x(uv)=(xu)u=((x)\widehat{u})\widehat{v}=(x)\widehat{u}\circ\widehat{v},
+  \]
+  para todo $x\in{X}$ e, portanto, que $\widehat{uv}=\widehat{u}\circ\widehat{v}$ para quaisquer elementos $u,v\in{G}$. Isto conclui a presente demonstração.
+\end{proof}
+
+Vale a pena notar que
+\[
+  \ker\left(u\mapsto{\widehat{u}}\right)=\bigcap_{x\in{X}}G_{x},
+\]
+e que, pelo primeiro Teorema do Isomorfismo para Grupos, vale:
+\[
+  G/\ker\left(u\mapsto{\widehat{u}}\right)\simeq\widehat{G}=\left\{\widehat{u}:u\in{G}\right\}\leqslant{S_{X}}.
+\]
+Uma ação é dita efetiva se $\ker\left(u\mapsto{\widehat{u}}\right)=\left\{1\right\}$. Vê-se, assim, que a toda ação de $G$ sobre $X$ corresponde uma ação efetiva de $G/\ker\left(u\mapsto\widehat{u}\right)$ sobre $X$.
+
+\section*{Exercícios}
+
+\begin{exercise}
+  Seja $n\in{\mathbb{N}}$, $n\geqslant{3}$. Dado um $\alpha\in{S_{n}}$ qualquer, mostre que:
+  \[
+    |\alpha^{A_{n}}|=|\alpha^{S_{n}}|
+    \quad\text{ou}\quad
+    |\alpha^{A_{n}}|=\frac{|\alpha^{S_{n}}|}{2},
+  \]
+  onde:
+  \begin{enumerate}
+    \item $\alpha^{S_{n}}=\left\{\alpha^{\beta}=\beta^{-1}\alpha\beta:\beta\in{S_{n}}\right\}$ é a classe de conjugação de $\alpha$ em $S_{n}$,
+    \item $\alpha^{A_{n}}=\left\{\alpha^{\beta}=\beta^{-1}\alpha\beta:\beta\in{A_{n}}\right\}$ é a classe de conjugação de $\alpha$ em $A_{n}$.
+  \end{enumerate}
+\end{exercise}

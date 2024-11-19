@@ -1,0 +1,89 @@
+\section{Grupos}\label{C01S01}
+
+\begin{definition}\label{def:operacao-binária}
+  Seja $X$ um conjunto não vazio. Uma operação binária em $X$ é uma função $X\times{X}\to{X}$.
+\end{definition}
+
+\begin{definition}\label{def:grupos}
+  Um grupo é um conjunto não vazio $G$ munido de uma operação binária
+  \[
+    G\times{G}\to{G},\quad{(x,y)\mapsto{xy}},
+  \]
+  satisfazendo:
+  \begin{description}
+    \item[($G1$)] $\forall\,{x,y,z\in{G}}$: $(xy)z=x(yz)$,
+    \item[($G2$)] $\exists\,{e\in{G}},\,\forall\,{x\in{G}}$: $xe=x$,
+    \item[($G3$)] $\forall\,{x\in{G}},\,\exists\,{y\in{G}}$: $xy=e$.
+  \end{description}
+\end{definition}
+
+\begin{proposition}\label{prop:elemento-idempotente}
+  Se um elemento $x$ de um grupo $G$ é tal que $xx=x$, então $x=e$.
+\end{proposition}
+
+\begin{proof}
+  Tome em $G$ elemento $y$ próprio para que $xy=e$. Então, observe que:
+  \[
+    x=xe=x(xy)=(xx)y=xy=e.
+  \]
+\end{proof}
+
+\begin{proposition}\label{prop:propriedades-grupos}
+  Seja $G$ um grupo. Então, valem:
+  \begin{enumerate}
+    \item $\forall\,{x,y\in{G}}$: $xy=e\implies{yx=e}$.
+    \item $\forall\,{x\in{G}}$: $ex=x$,
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  Dado um elemento $x\in{G}$ qualquer, seja $y\in{G}$ um elemento para o qual $xy=e$. Então, note que:
+  \[
+    (yx)(yx)=(y(xy))x=(ye)x=yx.
+  \]
+  Neste caso, $yx=e$ como decorre da Proposição~\eqref{prop:elemento-idempotente}. Finalmente, note que:
+  \[
+    ex=(xy)x=x(yx)=xe=x.
+  \]
+\end{proof}
+
+\begin{proposition}
+  Seja $G$ um grupo. Então:
+  \begin{enumerate}
+    \item É único o elemento $e\in{G}$ tal que $xe=x=ex$, para todo $x\in{G}$.
+    \item Para cada $x\in{G}$, é único o elemento $y\in{G}$ tal que $xy=e=yx$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  Se os elementos $e,e'\in{G}$ são tais que:
+  \[
+    xe=x=ex
+    \quad\text{e}\quad
+    xe'=x=e'x,
+  \]
+  para todo $x\in{G}$. Então, tem-se que:
+  \[
+    e=ee'=e'.
+  \]
+  Dado um elemento $x\in{G}$, suponha que os elementos $y,y'\in{G}$ sejam tais que:
+  \[
+    xy=e=yx
+    \quad\text{e}\quad
+    xy'=e=y'x.
+  \]
+  Neste caso, tem-se que:
+  \[
+    y=ye=y(xy')=(yx)y'=ey'=y'.
+  \]
+\end{proof}
+
+\begin{remark}
+  Seja $G$ um grupo. Ao único elemento $e\in{G}$ tal que \[xe=x=ex,\] para todo $x\in{G}$, dá-se o nome de elemento neutro e, daqui por diante, o representaremos genericamente por $1$. Também, para cada $x\in{G}$, ao único elemento $y\in{G}$ tal que \[xy=e=yx,\] dá-se o nome de elemento inverso de $x$ e doravante o representaremos por $x^{-1}$.
+\end{remark}
+
+\section*{Exercícios}
+
+\begin{exercise}
+  Seja $G$ um conjunto não vazio munido de uma operação binária. Suponha que, para cada par de elementos $a,b\in{G}$, existam elementos $x,y\in{G}$ tais que $ax=b$ e $ya=b$. Prove que $G$ é um grupo.
+\end{exercise}
