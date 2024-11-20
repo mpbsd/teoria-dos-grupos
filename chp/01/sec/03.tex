@@ -17,7 +17,7 @@
       (u,v)
       :
       u\in{H},v\in{K}
-    \right\},
+      \right\},
   \]
   munido da operação binária
   \[
@@ -74,17 +74,46 @@ Por último, observe que:
   para todos $(r,s),(u,v)\in{M\ltimes{N}}$.
 \end{proof}
 
-% \begin{proposition}
-%   Sejam $H$ e $K$ grupos. Seja
-%   \[
-%     H\to{Aut(K)},\quad{x\mapsto\widehat{x}},
-%   \]
-%   uma ação de $H$ à direita de $K$ por automorfismos deste, que aqui denotaremos por
-%   \[
-%     \widehat{x}:K\to{K},\quad{y\mapsto{y^x}}.
-%   \]
-%   Seja $L$ um grupo e sejam $\phi:H\to{L}$ e $\psi:K\to{L}$ homomorfismos de grupos tais que
-%   \[
-%     \forall\,x\in{H}:\quad{}
-%   \]
-% \end{proposition}
+\begin{proposition}
+  Seja $G=H\ltimes{K}$ o produto semidireto de um grupo $K$ por um grupo $H$. Se $\phi:H\to{L}$ e $\psi:K\to{L}$ são homomorfismos de grupos tais que
+  \[
+    \forall\,u\in{H}:\quad{\widehat{u}\cdot\psi=\psi\cdot\widehat{u^{\phi}}}\quad\text{(composição de funções)},
+  \]
+  onde
+  \[
+    \widehat{u^{\phi}}:L\to{L},\quad{x\mapsto{u^{-\phi}xu^{\phi}}},
+  \]
+  é a conjugação por $u^{\phi}$, então existe um homomorfismo de grupos $\varphi:G\to{L}$ tal que
+  \[
+    (u,1)^{\varphi}=u^{\phi}
+    \quad\text{e}\quad
+    (1,v)^{\varphi}=v^{\psi},
+  \]
+  para todos $u\in{H}$ e $v\in{K}$.
+\end{proposition}
+
+\begin{proof}
+  A função
+  \[
+    \varphi:G\to{L},\quad{(u,v)\mapsto{u^{\phi}v^{\psi}}},
+  \]
+  está, evidentemente, bem definida. Tal definição foi pensada de modo que as seguintes identidades fossem cumpridas:
+  \[
+    \forall\,(u,v)\in{G}:
+    \quad
+    (u,1)^{\varphi}=u^{\phi}
+    \quad\text{e}\quad
+    (1,v)^{\varphi}=v^{\psi},
+  \]
+  Finalmente, observe que:
+  \begin{align*}
+    \left((r,s)(t,u)\right)^{\varphi}
+    &=(rt,s^{t}u)^{\varphi}                                                                             \\
+    &=(rt)^{\phi}(s^{t}u)^{\psi}                                                                        \\
+    &=r^{\phi}t^{\phi}(s^{t})^{\psi}u^{\psi}                                                            \\
+    &=r^{\phi}t^{\phi}(s^{\psi})^{t^{\phi}}u^{\psi}\quad(\text{pela hipótese sobre }\phi\text{ e }\psi) \\
+    &=r^{\phi}s^{\psi}t^{\phi}u^{\psi}                                                                  \\
+    &=(r,s)^{\varphi}(t,u)^{\varphi},
+  \end{align*}
+  para todos $(r,s),(t,u)\in{G}$.
+\end{proof}
