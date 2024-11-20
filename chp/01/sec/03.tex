@@ -1,6 +1,6 @@
 \section{Produtos semidiretos}\label{sec:produtos-semidiretos}
 
-\begin{definition}
+\begin{definition}\label{def:produtos-semidiretos}
   Sejam $H,K$ grupos e
   \[
     H\to{Aut(K)},\quad{u\mapsto\widehat{u}},
@@ -27,22 +27,26 @@
 \end{definition}
 
 O produto semidireto $H\ltimes{K}$ dos grupos $H,K$ é, também, um grupo. Com efeito, dados $(r,s),(t,u)$ e $(v,w)$ quaisquer em $H\ltimes{K}$, tem-se que:
-\begin{align*}
-  (r,s)\cdot{(t,u)(v,w)}
-  &=(r,s)(tv,u^{v}w)                 \\
-  &=(r\cdot{tv},s^{tv}\cdot{u^{v}w}) \\
-  &=(rt\cdot{v},(s^{t}u)^{v}w)       \\
-  &=(rt,s^{t}u)(v,w)                 \\
-  &=(r,s)(t,u)\cdot{(v,w)},
-\end{align*}
 
-\[
-  (r,s)(1,1)=(r1,s^{1}1)=(r,s),
-\]
-
-\[
-  (r,s)(r^{-1},s^{-r^{-1}})=(rr^{-1},s^{r^{-1}}s^{-r^{-1}})=(1,(ss^{-1})^{r^{-1}})=(1,1),
-\]
+\begin{description}
+  \item[A operação é associativa:]
+    \begin{align*}
+      (r,s)\cdot{(t,u)(v,w)}
+      &=(r,s)(tv,u^{v}w)                 \\
+      &=(r\cdot{tv},s^{tv}\cdot{u^{v}w}) \\
+      &=(rt\cdot{v},(s^{t}u)^{v}w)       \\
+      &=(rt,s^{t}u)(v,w)                 \\
+      &=(r,s)(t,u)\cdot{(v,w)}
+    \end{align*}
+  \item[Há elemento neutro:]
+    \[
+      (r,s)(1,1)=(r1,s^{1}1)=(r,s)
+    \]
+  \item[Todo elemento admite inverso:]
+    \[
+      (r,s)(r^{-1},s^{-r^{-1}})=(rr^{-1},s^{r^{-1}}s^{-r^{-1}})=(1,(ss^{-1})^{r^{-1}})=(1,1)
+    \]
+\end{description}
 
 Por último, observe que:
 
@@ -73,6 +77,10 @@ Por último, observe que:
   \]
   para todos $(r,s),(u,v)\in{M\ltimes{N}}$.
 \end{proof}
+
+\begin{example}
+  $S_{n}=\langle{(1,2)}\rangle\ltimes{A_{n}}$ para todo $n\geqslant{3}$.
+\end{example}
 
 \begin{proposition}
   Seja $G=H\ltimes{K}$ o produto semidireto de um grupo $K$ por um grupo $H$. Se $\phi:H\to{L}$ e $\psi:K\to{L}$ são homomorfismos de grupos tais que
