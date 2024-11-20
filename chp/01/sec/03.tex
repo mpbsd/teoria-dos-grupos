@@ -1,3 +1,90 @@
 \section{Produtos semidiretos}\label{sec:produtos-semidiretos}
 
+\begin{definition}
+  Sejam $H,K$ grupos e
+  \[
+    H\to{Aut(K)},\quad{u\mapsto\widehat{u}},
+  \]
+  uma ação de $H$ à direita de $K$ por automorfismos deste último, que aqui denotaremos por
+  \[
+    \widehat{u}:K\to{K},\quad{v\mapsto{v^{u}}}.
+  \]
+  O produto semidireto $H\ltimes{K}$, de $K$ por $H$, é o produto cartesiano
+  \[
+    H\times{K}
+    =
+    \left\{
+      (u,v)
+      :
+      u\in{H},v\in{K}
+    \right\},
+  \]
+  munido da operação binária
+  \[
+    (x,y)(z,w)=(xz,y^{z}w),
+  \]
+  assim definida para todos $(x,y),(z,w)\in{H\times{K}}$.
+\end{definition}
 
+O produto semidireto $H\ltimes{K}$ dos grupos $H,K$ é, também, um grupo. Com efeito, dados $(r,s),(t,u)$ e $(v,w)$ quaisquer em $H\ltimes{K}$, tem-se que:
+\begin{align*}
+  (r,s)\cdot{(t,u)(v,w)}
+  &=(r,s)(tv,u^{v}w)                 \\
+  &=(r\cdot{tv},s^{tv}\cdot{u^{v}w}) \\
+  &=(rt\cdot{v},(s^{t}u)^{v}w)       \\
+  &=(rt,s^{t}u)(v,w)                 \\
+  &=(r,s)(t,u)\cdot{(v,w)},
+\end{align*}
+
+\[
+  (r,s)(1,1)=(r1,s^{1}1)=(r,s),
+\]
+
+\[
+  (r,s)(r^{-1},s^{-r^{-1}})=(rr^{-1},s^{r^{-1}}s^{-r^{-1}})=(1,(ss^{-1})^{r^{-1}})=(1,1),
+\]
+
+Por último, observe que:
+
+\[
+  (1,s)^{(r,1)}=(r,1)^{-1}(1,s)(r,1)=(r^{-1},1)(r,s^{r})=(r^{-1}r,s^{r})=(1,s^{r}),
+\]
+
+\begin{proposition}
+  Sejam $G$ um grupo e $M,N$ subgrupos de $G$, sendo:
+  \[
+    M\cdot{N}=G,
+    \quad
+    M\cap{N}=\left\{1\right\}
+    \quad\text{e}\quad
+    N\unlhd{G}.
+  \]
+  Então, $G\simeq{M\ltimes{N}}$.
+\end{proposition}
+
+\begin{proof}
+  Neste caso, a função
+  \[
+    \phi:M\ltimes{N}\to{G},\quad{(m,n)\mapsto{mn}},
+  \]
+  é um isomorfismo de grupos. Ela é injetiva, pois $M\cap{N}=\left\{1\right\}$. É igualmente sobrejetiva, já que $M\cdot{N}=G$. Finalmente, tem-se que:
+  \[
+    (r,s)^{\phi}(u,v)^{\phi}=rs\cdot{uv}=ru\cdot{s^{u}v}=(ru,s^{u}v)^{\phi}=\left((r,s)(u,v)\right)^{\phi},
+  \]
+  para todos $(r,s),(u,v)\in{M\ltimes{N}}$.
+\end{proof}
+
+% \begin{proposition}
+%   Sejam $H$ e $K$ grupos. Seja
+%   \[
+%     H\to{Aut(K)},\quad{x\mapsto\widehat{x}},
+%   \]
+%   uma ação de $H$ à direita de $K$ por automorfismos deste, que aqui denotaremos por
+%   \[
+%     \widehat{x}:K\to{K},\quad{y\mapsto{y^x}}.
+%   \]
+%   Seja $L$ um grupo e sejam $\phi:H\to{L}$ e $\psi:K\to{L}$ homomorfismos de grupos tais que
+%   \[
+%     \forall\,x\in{H}:\quad{}
+%   \]
+% \end{proposition}
