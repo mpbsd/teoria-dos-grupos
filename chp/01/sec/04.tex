@@ -52,7 +52,7 @@
   \[
     \Omega(G,p)\times{G}\to\Omega(G,p),\quad{(X,g)\mapsto{X\cdot{g}}},
   \]
-  onde $X\cdot{g}=\{xg:x\in{X}\}$. Pelas Proposições~\eqref{prop:equivalence-relation-associated-with-an-action} e~\eqref{prop:counting-orbits}, tem-se que:
+  onde $X\cdot{g}=\{xg:x\in{X}\}$. Pelas Proposições~\ref{prop:equivalence-relation-associated-with-an-action} e~\ref{prop:counting-orbits}, tem-se que:
   \[
     \order{\Omega(G,p)}=\sum_{i}\,[G:H_{i}],
   \]
@@ -67,9 +67,41 @@
   Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Denotamos por $\text{Syl}_{p}(G)$ ao conjunto de todos os $p$-subgrupos de Sylow de $G$, e por $n_{p}$ ao número de $p$-subgrupos de Sylow de $G$, isto é, $n_{p}=\order{\text{Syl}_{p}(G)}$.
 \end{definition}
 
+\begin{proposition}\label{prop:normalizadores-de-p-subgrupos-de-sylow}
+  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Sejam $H$ um $p$-subgrupo de Sylow de $G$ e $N=N_{G}(H)$ o normalizador de $H$ em $G$. Então, $N_{G}(N)=N$, ou seja, $N$ é o seu próprio normalizador em $G$.
+\end{proposition}
+
+\begin{proof}
+  Note que $H\leqslant{N}$ e, portanto, que $p$ divide a ordem de $N$. Se $x$ é um $p$-elemento de $N$ (isto significa que $\langle{x}\rangle$ é $p$-subgrupo de $N$), então $\langle{x}\rangle{H}=H\langle{x}\rangle$ e, assim, $\langle{x}\rangle{H}\leqslant{G}$. Suponha, por contradição, que $x\notin{H}$. Neste caso, tem-se que:
+  \[
+    \order{\langle{x}\rangle{H}}=\frac{\order{x}\order{H}}{\order{\langle{x}\rangle\cap{H}}}>\order{H}\quad\text{pois}\quad\langle{x}\rangle>\langle{x}\rangle\cap{H},
+  \]
+  ou seja, que $\langle{x}\rangle{H}$ é um $p$-subgrupo de $G$ cuja ordem é superior à de um $p$-subgrupo de Sylow de $G$. Esta contradição nos obriga a admitir que $x\in{H}$. Esta discussão nos permite concluir que:
+  \[
+    \forall\,y\in{N_{G}(N)}:\quad{H^{y}\leqslant{N^{y}=N}\implies{H^{y}=H}\implies{y\in{N_{G}(H)=N}}},
+  \]
+  de onde segue que $N_{G}(N)=N$.
+\end{proof}
+
 \begin{theorem}[Sylow]\label{thm:segundo-teorema-de-sylow}
   Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Então, todos os $p$-subgrupos de Sylow de $G$ são conjugados entre si.
 \end{theorem}
+
+\begin{proof}
+  Sejam $H,K\in\text{Syl}_{p}(G)$ dois $p$-subgrupos de Sylow quaisquer de $G$. Seja $H^{G}=\{H^{g}:g\in{G}\}$ a $G$-órbita da ação por conjugação de $G$ à direita de $\text{Syl}_{p}(G)$. Observe que $p$ não divide $\order{H^{G}}$, pois:
+  \[
+    \order{H^{G}}=[G:N_{G}(H)]=\frac{[G:H]}{[N_{G}(H):H]}.
+  \]
+  Finalmente, considere a ação por conjugação de $K$ à direita de $H^{G}$:
+  \[
+    H^{G}\times{K}\to{H^{G}},\quad{(H^{x},y)\mapsto{H^{xy}}}.
+  \]
+  Da identidade
+  \[
+    \order{H^{G}}=\sum_{i}\,[K:K\cap{N_{G}(H^{x_{i}})}],
+  \]
+  segue que $p$ não divide $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$, para algum $i_{0}$. Como este número é uma potência de $p$, isto só pode acontecer se $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ for igual a $1$, ou seja, se $K\leqslant{N_{G}(H^{x_{i_{0}}})}$. Portanto, $K\leqslant{H^{x_{i_{0}}}}$, como segue da Proposição~\ref{prop:normalizadores-de-p-subgrupos-de-sylow}. Como $\order{K}=\order{H^{x_{i_{0}}}}$, tem-se que $K=H^{x_{i_{0}}}$. Isto encerra esta demonstração.
+\end{proof}
 
 \begin{theorem}[Sylow]\label{thm:terceiro-teorema-de-sylow}
   Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Digamos que $\order{G}=p^{\alpha}m$, onde $\alpha,m\in{\mathbb{Z}}$, $\alpha>0$ e $(p,m)=1$. Então, $n_{p}\equiv{1}\pmod{p}$ e, além disso, $n_{p}$ divide $m$.
