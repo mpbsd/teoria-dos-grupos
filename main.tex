@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{enumerate}
+\usepackage{mathtools}
 \usepackage{stmaryrd}
 
 \newtheorem{definition}{Definição}
@@ -15,11 +16,15 @@
 \newtheorem{exercise}{Exercício}
 \newtheorem{corollary}{Corolário}
 \newtheorem{example}{Exemplo}
+\newtheorem{theorem}{Teorema}
+
+\DeclarePairedDelimiter\order{\lvert}{\rvert}
 
 \begin{document}
 
-\input{chp/01/sec/01.tex}
-\input{chp/01/sec/02.tex}
-\input{chp/01/sec/03.tex}
+\input{chp/01/sec/01.tex}  % grupos
+\input{chp/01/sec/02.tex}  % ações
+\input{chp/01/sec/03.tex}  % produtos semidiretos
+\input{chp/01/sec/04.tex}  % subgrupos de Sylow
 
 \end{document}

@@ -1,0 +1,76 @@
+\section{Teoremas de Sylow}\label{sec:teoremas-de-sylow}
+
+\begin{definition}\label{def:p-grupo}
+  Seja $p$ um número primo. Um $p$-grupo é um grupo $G$ em que todo elemento tem ordem igual a alguma potência de $p$.
+\end{definition}
+
+\begin{definition}
+  Sejam $G$ um grupo e $p$ um número primo. Um subgrupo de $G$ que é também um $p$-grupo é dito um $p$-subgrupo de $G$.
+\end{definition}
+
+\begin{definition}\label{def:p-subgrupo-de-sylow}
+  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Um $p$-subgrupo de Sylow de $G$ é um $p$-subgrupo maximal $H$ de $G$, no seguinte sentido: se $K$ é um $p$-subgrupo de $G$ e $H\leqslant{K}$, então $H=K$ ou $K=G$.
+\end{definition}
+
+\begin{theorem}[Sylow]\label{thm:primeiro-teorema-de-sylow}
+  Sejam $G$ um grupo e $p$ um divisor primo da ordem de $G$. Se $p^{\alpha}$ é a maior potência de $p$ que divide a ordem de $G$, isto é, se:
+  \[
+    \order{G}=p^{\alpha}m,\quad\text{onde}\quad(p,m)=1,
+  \]
+  então existe ao menos um subgrupo $H$ de $G$ de ordem $p^{\alpha}$.
+\end{theorem}
+
+\begin{proof}
+  Seja
+  \[
+    \Omega(G,p)
+    =
+    \left\{
+      X\subset{G}
+      :
+      \order{X}=p^{\alpha}
+    \right\},
+  \]
+  a coleção dos subconjuntos de $G$ que possuem cardinalidade $p^{\alpha}$. Como se sabe, o número de elementos de $\Omega(G,p)$ é dado por:
+  \[
+    \order{\Omega(G,p)}
+    =
+    \binom{\order{G}}{p^{\alpha}}
+    =
+    \frac{\order{G}!}{p^{\alpha}!(\order{G}-p^{\alpha})!}
+    =
+    \frac{\order{G}}{p^{\alpha}}\frac{(\order{G}-1)}{p^{\alpha}-1}\cdots\frac{(\order{G}-p^{\alpha}+1)}{1}.
+  \]
+  Note que
+  \[
+    \forall\,i\in\{1,\ldots,\alpha\}:\quad
+    \frac{\order{G}-i}{p^{\alpha}-i}\not\equiv{0}\pmod{p},
+  \]
+  Com efeito, se alguma potência inteira do primo $p$, digamos, $p^{\beta}$, divide a diferença $\order{G}-i$, então existe um número inteiro $q$ com que se possa escrever $p^{\alpha}m-i=p^{\beta}q$. Neste caso, tem-se que $(p^{\alpha-\beta}m-q)p^{\beta}=i$ e, ainda, como $p^{\alpha-\beta}m-q$ é um número inteiro, que $p^{\beta}$ divide $i$. Observe, finalmente, que $p^{\beta}$ precisa dividir $p^{\alpha}-i$ porque divide ambos $p^{\alpha}$ e $i$. Raciocinando de maneira análoga pode-se provar que, se $p^{\beta}$ divide $p^{\alpha}-i$, então ele também deve dividir $\order{G}-i$. Desta forma, $\frac{\order{G}-i}{p^{\alpha}-i}$ não é divisível por $p$.
+
+  Considere a ação de $G$ à direita de $\Omega(G,p)$, dada por:
+  \[
+    \Omega(G,p)\times{G}\to\Omega(G,p),\quad{(X,g)\mapsto{X\cdot{g}}},
+  \]
+  onde $X\cdot{g}=\{xg:x\in{X}\}$. Pelas Proposições~\eqref{prop:equivalence-relation-associated-with-an-action} e~\eqref{prop:counting-orbits}, tem-se que:
+  \[
+    \order{\Omega(G,p)}=\sum_{i}\,[G:H_{i}],
+  \]
+  onde $H_{i}=\{g\in{G}:X_{i}\cdot{g}=X_{i}\}$ é o estabilizador de $X_{i}$ em $G$. Vê-se, assim, que existe um $X_{i_{0}}$ em $\Omega(G,p)$ para o qual $[G:H_{i_{0}}]\not\equiv{0}\pmod{p}$, pois $p$ não divide $\order{\Omega(G,p)}$. Faça $H=H_{i_{0}}$. Como $p$ é primo, divide o produto $\order{G}=[G:H]\order{H}$ e não divide $[G:H]$, ele precisa dividir $\order{H}$. Logo, $p^{\alpha}$ divide $\order{H}$ e, deste modo, $p^{\alpha}\leqslant\order{H}$. Finalmente, tome um elemento $a\in{X_{i_{0}}}$ qualquer e com ele defina a seguinte função:
+  \[
+    H\to{X_{i_{0}}},\quad{x\mapsto{ax}}.
+  \]
+  Tal função está bem definida pois $H$ é o estabilizador de $X_{i_{0}}$ em $G$, de sorte que $ax\in{X_{i_{0}}}\cdot{x}=X_{i_{0}}$ para todo $x\in{H}$. Como esta função é injetora, tem-se que $\order{H}\leqslant{X_{i_{0}}}=p^{\alpha}$. De $p^{\alpha}\leqslant\order{H}$ e $\order{H}\leqslant{p^{\alpha}}$ segue que $\order{H}=p^{\alpha}$. Isto conclui a presente demonstração.
+\end{proof}
+
+\begin{definition}
+  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Denotamos por $\text{Syl}_{p}(G)$ ao conjunto de todos os $p$-subgrupos de Sylow de $G$, e por $n_{p}$ ao número de $p$-subgrupos de Sylow de $G$, isto é, $n_{p}=\order{\text{Syl}_{p}(G)}$.
+\end{definition}
+
+\begin{theorem}[Sylow]\label{thm:segundo-teorema-de-sylow}
+  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Então, todos os $p$-subgrupos de Sylow de $G$ são conjugados entre si.
+\end{theorem}
+
+\begin{theorem}[Sylow]\label{thm:terceiro-teorema-de-sylow}
+  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Digamos que $\order{G}=p^{\alpha}m$, onde $\alpha,m\in{\mathbb{Z}}$, $\alpha>0$ e $(p,m)=1$. Então, $n_{p}\equiv{1}\pmod{p}$ e, além disso, $n_{p}$ divide $m$.
+\end{theorem}
