@@ -100,9 +100,24 @@
   \[
     \order{H^{G}}=\sum_{i}\,[K:K\cap{N_{G}(H^{x_{i}})}],
   \]
-  segue que $p$ não divide $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$, para algum $i_{0}$. Como este número é uma potência de $p$, isto só pode acontecer se $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ for igual a $1$, ou seja, se $K\leqslant{N_{G}(H^{x_{i_{0}}})}$. Portanto, $K\leqslant{H^{x_{i_{0}}}}$, como segue da Proposição~\ref{prop:normalizadores-de-p-subgrupos-de-sylow}. Como $\order{K}=\order{H^{x_{i_{0}}}}$, tem-se que $K=H^{x_{i_{0}}}$. Isto encerra esta demonstração.
+  segue que, para algum $i_{0}$, $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ não é divisível por $p$. Como este número é uma potência de $p$, isto só pode acontecer se $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ for igual a $1$, ou seja, se $K\leqslant{N_{G}(H^{x_{i_{0}}})}$. Portanto, $K\leqslant{H^{x_{i_{0}}}}$, como segue da Proposição~\ref{prop:normalizadores-de-p-subgrupos-de-sylow}. Como $\order{K}=\order{H^{x_{i_{0}}}}$, tem-se que $K=H^{x_{i_{0}}}$. Isto encerra esta demonstração.
 \end{proof}
 
 \begin{theorem}[Sylow]\label{thm:terceiro-teorema-de-sylow}
   Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Digamos que $\order{G}=p^{\alpha}m$, onde $\alpha,m\in{\mathbb{Z}}$, $\alpha>0$ e $(p,m)=1$. Então, $n_{p}\equiv{1}\pmod{p}$ e, além disso, $n_{p}$ divide $m$.
 \end{theorem}
+
+\begin{proof}
+  Considere a ação por conjugação de $G$ à direita de $\text{Syl}_{p}(G)$, dada por:
+  \[
+    \text{Syl}_{p}(g)\times{G}\to\text{Syl}_{p}(G),\quad{(H,x)\mapsto{H^{x}}}.
+  \]
+  Tal ação é transitiva, pelo Teorema~\ref{thm:segundo-teorema-de-sylow}. Deste modo, dado um $H\in\text{Syl}_{p}(G)$ qualquer, tem-se $\text{Syl}_{p}(G)=H^{G}$ e, além disso, $n_{p}=[G:N_{G}(H)]$. Note que
+  \[
+    n_{p}
+    =
+    \frac{[G:H]}{[N_{G}(H):H]}
+    =
+    \frac{m}{[N_{G}(H):H]},
+  \]
+\end{proof}
