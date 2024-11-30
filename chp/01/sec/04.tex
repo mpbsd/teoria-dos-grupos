@@ -84,7 +84,7 @@
 \end{proof}
 
 \begin{theorem}[Sylow]\label{thm:segundo-teorema-de-sylow}
-  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Então, todos os $p$-subgrupos de Sylow de $G$ são conjugados entre si.
+  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Então, todos os $p$-subgrupos de Sylow de $G$ são conjugados entre si. Alem disso, se $H\in\text{Syl}_{p}(G)$, então $\order{H^{G}}\equiv{1}\pmod{p}$.
 \end{theorem}
 
 \begin{proof}
@@ -96,15 +96,19 @@
   \[
     H^{G}\times{K}\to{H^{G}},\quad{(H^{x},y)\mapsto{H^{xy}}}.
   \]
-  Da identidade
+  Como
   \[
     \order{H^{G}}=\sum_{i}\,[K:K\cap{N_{G}(H^{x_{i}})}],
   \]
-  segue que, para algum $i_{0}$, $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ não é divisível por $p$. Como este número é uma potência de $p$, isto só pode acontecer se $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ for igual a $1$, ou seja, se $K\leqslant{N_{G}(H^{x_{i_{0}}})}$. Portanto, $K\leqslant{H^{x_{i_{0}}}}$, como segue da Proposição~\ref{prop:normalizadores-de-p-subgrupos-de-sylow}. Como $\order{K}=\order{H^{x_{i_{0}}}}$, tem-se que $K=H^{x_{i_{0}}}$. Isto encerra esta demonstração.
+  tem-se que, para algum $i_{0}$, $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ não é divisível por $p$. Como este número é uma potência de $p$, isto só pode acontecer se
+  \[
+    [K:K\cap{N_{G}(H^{x_{i_{0}}})}]=1,
+  \]
+  e, neste caso, $K\leqslant{N_{G}(H^{x_{i_{0}}})}$. Pela proposição~\ref{prop:normalizadores-de-p-subgrupos-de-sylow}, portanto, tem-se $K\leqslant{H^{x_{i_{0}}}}$ e, assim, como $\order{K}=\order{H^{x_{i_{0}}}}$, que $K=H^{x_{i_{0}}}$. Observe que $[K:K\cap{N_{G}(H^{x_{i_{0}}})}]$ apenas é igual a $1$ uma única vez, a saber, quando $K=H^{x_{i_{0}}}$. Em todos os outros casos este número é uma potência de $p$ (com expoente positivo). Isto diz que $\order{H^{G}}\equiv{1}\pmod{p}$. Isto encerra esta demonstração.
 \end{proof}
 
 \begin{theorem}[Sylow]\label{thm:terceiro-teorema-de-sylow}
-  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Digamos que $\order{G}=p^{\alpha}m$, onde $\alpha,m\in{\mathbb{Z}}$, $\alpha>0$ e $(p,m)=1$. Então, $n_{p}\equiv{1}\pmod{p}$ e, além disso, $n_{p}$ divide $m$.
+  Sejam $G$ um grupo finito e $p$ um divisor primo da ordem de $G$. Digamos que $\order{G}=p^{\alpha}m$, onde $\alpha,m\in{\mathbb{N}}$ e $(p,m)=1$. Então, $n_{p}\equiv{1}\pmod{p}$ e, além disso, $n_{p}$ divide $m$.
 \end{theorem}
 
 \begin{proof}
@@ -112,7 +116,12 @@
   \[
     \text{Syl}_{p}(g)\times{G}\to\text{Syl}_{p}(G),\quad{(H,x)\mapsto{H^{x}}}.
   \]
-  Tal ação é transitiva, pelo Teorema~\ref{thm:segundo-teorema-de-sylow}. Deste modo, dado um $H\in\text{Syl}_{p}(G)$ qualquer, tem-se $\text{Syl}_{p}(G)=H^{G}$ e, além disso, $n_{p}=[G:N_{G}(H)]$. Note que
+  Tal ação é transitiva, pelo Teorema~\ref{thm:segundo-teorema-de-sylow}. Deste modo, dado um $H\in\text{Syl}_{p}(G)$ qualquer, tem-se $\text{Syl}_{p}(G)=H^{G}$ e, então, $n_{p}=\order{\text{Syl}_{p}(G)}=[G:N_{G}(H)]$.
+  Note que
+  \[
+    n_{p}=\sum_{i}[G:N_{G}(H_{i})],
+  \]
+  onde
   \[
     n_{p}
     =
